@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --animation-size: .58px;
+    --animation-time: .14s;
+    /* --especial: 10, 8, 6, 4, 2; */
+}
+
+body {
+    max-width: 1440px;
+    max-height: 580px;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.animacao {
+    height: calc(600 * var(--animation-size));
+    width: calc(600 * var(--animation-size));
+    position: relative;
+    /* background-color: red; */
+
+    /* left: 1161px; */
+    /* top: 148px; */
+}
+
+/* =============================================== marcações ========================================== */
+
+[class$="marcacao"] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: calc(8*var(--animation-size)) solid rgb(206, 206, 206);
+    border-radius: 50%;
+    z-index: 2;
+
+}
+
+[class^="cinco"] {
+    width: calc(645*var(--animation-size));
+    height: calc(645*var(--animation-size));
+}
+
+[class^="quatro"] {
+    width: calc(500*var(--animation-size));
+    height: calc(500*var(--animation-size));
+}
+
+[class^="tres"] {
+    width: calc(365*var(--animation-size));
+    height: calc(365*var(--animation-size));
+}
+
+[class^="dois"] {
+    width: calc(225*var(--animation-size));
+    height: calc(225*var(--animation-size));
+}
+
+[class^="um"] {
+    width: calc(90*var(--animation-size));
+    height: calc(90*var(--animation-size));
+}
+
+/* ================================================= orbitas ========================================== */
+[class^="orbita"] {
+    position: absolute;
+    left: calc(4.17% * var(--especial));
+    top: calc(4.17% * var(--especial));
+    /* background-color: rgba(0, 0, 255, 0.2); */
+    z-index: 3;
+}
+
+[class$="cinco"] {
+    width: calc(500*var(--animation-size));
+    height: calc(500*var(--animation-size));
+    animation: calc(20*var(--animation-time)) rotacao-esquerda infinite linear;
+}
+
+[class$="quatro"] {
+    width: calc(400*var(--animation-size));
+    height: calc(400*var(--animation-size));
+    animation: calc(20*var(--animation-time)) rotacao-direita infinite linear;
+}
+
+[class$="tres"] {
+    width: calc(300*var(--animation-size));
+    height: calc(300*var(--animation-size));
+    animation: calc(20*var(--animation-time)) rotacao-esquerda infinite linear;
+}
+
+[class$="dois"] {
+    width: calc(200*var(--animation-size));
+    height: calc(200*var(--animation-size));
+    animation: calc(20*var(--animation-time)) rotacao-direita infinite linear;
+}
+
+[class$="um"] {
+    width: calc(100*var(--animation-size));
+    height: calc(100*var(--animation-size));
+    animation: calc(20*var(--animation-time)) rotacao-esquerda infinite linear;
+}
+
+
+/* ================================================== itens =========================================== */
+
+[class^='item'] {
+    position: absolute;
+    border-radius: 10%;
+}
+
+[class$='js'] {
+    background-color: yellow;
+    height: calc(40*var(--animation-size));
+    width: calc(40*var(--animation-size));
+    animation: calc(20*var(--animation-time)) rotacao-direita infinite linear;
+}
+
+[class$='css'] {
+    background-color: blue;
+    height: calc(70*var(--animation-size));
+    width: calc(70*var(--animation-size));
+    left: 103%;
+    top: 40%;
+    animation: calc(20*var(--animation-time)) rotacao-esquerda infinite linear;
+}
+
+[class$='scss'] {
+    background-color: pink;
+    height: calc(30*var(--animation-size));
+    width: calc(30*var(--animation-size));
+    left: 84%;
+    top: 82%;
+    animation: calc(20*var(--animation-time)) rotacao-esquerda infinite linear;
+}
+
+
+@keyframes rotacao-esquerda {
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotacao-direita {
+    0% {
+        transform: rotate(-360deg);
+    }
+} 
